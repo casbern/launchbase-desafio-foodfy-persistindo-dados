@@ -1,0 +1,48 @@
+a {
+  text-decoration: none;
+}
+
+.avatar {
+  height: 280px;
+  border-radius: 15px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.admin-wrapper div.main-title {
+  margin-top: 50px;
+  margin-bottom: 10px;
+  font-size: 36px;
+  text-align: center;
+}
+
+.admin-wrapper div.author {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--color-dark-grey);
+  text-align: center;
+}
+
+.admin-wrapper div.title {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.admin-wrapper div.list-ingredients ul, div.list-steps ul {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  color: var(--color-darker-grey);
+  list-style-type: "- ";
+  list-style-position: inside;
+}
+
+.admin-wrapper div.extra-information {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--color-darker-grey);
+  line-height: 28px;
+  text-align: justify;
+  margin-bottom: 50px;
+}

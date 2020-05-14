@@ -1,0 +1,71 @@
+
+h3 {
+  padding-bottom: 20px;
+}
+
+h4 {
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--color-grey);
+  margin-left: 20px;
+}
+
+ul {
+  margin-bottom: 20px;
+}
+
+.button {
+  display: flex;
+  cursor: pointer;
+}
+
+.recipe {
+  line-height: 20px;
+}
+
+.recipe-header {
+  line-height: 40px;
+}
+
+.recipe-header h1, .recipe-header h2 {
+  text-align: center;
+}
+
+.recipe-header h2 {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--color-dark-grey);
+}
+
+.recipe-content {
+  list-style-position: inside;
+}
+
+.hide {
+  display: none;
+}
+
+
+/* === Links === */
+
+.linkActive {
+  font-weight: bold;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+

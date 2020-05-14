@@ -1,0 +1,55 @@
+{% extends "admin/layout.njk" %}
+
+{% block content %}
+
+{% block head %}
+  <link rel="stylesheet" href="/admin/create.css">
+{% endblock %}
+
+<form action="/admin/recipes" method="POST">
+
+<h3>Criar receita</h3>
+
+<button type="submit" class="btn btn-save">Salvar receita</button>
+
+<div class="item">
+<div>Imagem da receita</div>
+<input type="url" name="recipe_avatar" placeholder="http://">
+</div>
+
+<div class="item">
+<div>Nome da Receita</div>
+<input type="text" name="recipe_name" placeholder="Ex: Torta de Maça">
+</div>
+
+<div class="item">
+<div>Autor da Receita</div>
+<input type="text" name="recipe_author" placeholder="Ex: João Silva">
+</div>
+
+<div class="item" id="ingredients">
+<div>Ingredientes</div>
+<div class="ingredient">
+<input type="text" name="ingredients[]" value="">
+</div>
+</div>
+<button type="button" class="add-ingredient">Adicionar novo ingrediente</button>
+
+<div class="item" id="steps">
+<div>Modo de preparo</div>
+<div class="step">
+<input type="text" name="preparation[]" value="">
+</div>
+</div>
+<button type="button" class="add-step">Adicionar novo passo</button>
+
+<div class="item">
+<div>Informações adicionais</div>
+<textarea name="extra_information"></textarea>
+</div>
+</form>
+
+<script src="/admin/add-ingredients.js"></script>
+<script src="/admin/add-steps.js"></script>
+
+{% endblock %}
