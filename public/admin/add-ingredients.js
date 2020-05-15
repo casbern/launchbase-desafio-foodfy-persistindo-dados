@@ -1,4 +1,5 @@
 function addIngredient() {
+  console.log("I was clicked")
   const ingredients = document.querySelector("#ingredients")
   const fieldContainer = document.querySelectorAll(".ingredient")
 

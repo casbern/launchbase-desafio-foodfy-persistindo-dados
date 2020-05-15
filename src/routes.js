@@ -1,21 +1,25 @@
 const express = require('express')
 const routes = express.Router()
-const adminRoutes = require('./app/controllers/admin.js')
-const websiteRoutes = require('./app/controllers/website.js')
+const chefs = require('./app/controllers/admin/chefs.js')
+const recipes = require('./app/controllers/admin/recipes.js')
+const main = require('./app/controllers/main.js')
 
 
 module.exports = routes
 
-routes.get('/', websiteRoutes.index) 
-routes.get('/about', websiteRoutes.about)
-routes.get('/recipes', websiteRoutes.recipes)
-routes.get('/recipes/:id', websiteRoutes.recipe)
+routes.get('/', main.index) 
+routes.get('/about', main.about)
+routes.get('/recipes', main.recipes)
+routes.get('/recipes/:id', main.recipe)
 
 // ADMINISTRATIVE AREA
-routes.get("/admin/recipes", adminRoutes.index)
-routes.get("/admin/recipes/create", adminRoutes.create)
-routes.get("/admin/recipes/:id", adminRoutes.show)
-routes.get("/admin/recipes/:id/edit", adminRoutes.edit)
-routes.post("/admin/recipes", adminRoutes.post)
-routes.put("/admin/recipes", adminRoutes.put)
-routes.delete("/admin/recipes", adminRoutes.delete)
+//RECIPES
+routes.get("/admin/recipes", recipes.index)
+routes.get("/admin/recipes/create", recipes.create)
+routes.get("/admin/recipes/:id", recipes.show)
+routes.get("/admin/recipes/:id/edit", recipes.edit)
+routes.post("/admin/recipes", recipes.post)
+routes.put("/admin/recipes", recipes.put)
+routes.delete("/admin/recipes", recipes.delete)
+
+//CHEFS

@@ -1,51 +1,28 @@
-const data = require("../../../data.json")
+const Recipe = require("../../models/recipe")
 const fs = require("fs")
 
 module.exports = {
   index(req, res) {
-    return res.render("admin/index", {recipes: data.recipes})
+    return res.render("admin/recipes/index", {recipes}) 
   },
 
   create(req, res) {
-    return res.render("admin/create")
+    return res.render("admin/recipes/create")
   },
   
   post(req, res) {
+    console.log("req.body")
+    console.log(req.body)
+    //==
     const keys = Object.keys(req.body)
-  
-    let {
-      recipe_avatar,
-      recipe_name,
-      recipe_author,
-      ingredients,
-      preparation,
-      extra_information
-    } = req.body
-  
-    const lastRecipe = data.recipes[data.recipes.length - 1]
-    let id
-  
-    if (lastRecipe) {
-      id = lastRecipe.id + 1
-    } else {
-      id = 1
-    }
-  
-    data.recipes.push({
-      id,
-      recipe_avatar,
-      recipe_name,
-      recipe_author,
-      ingredients,
-      preparation,
-      extra_information
-    })
-  
-    fs.writeFile("data.json", JSON.stringify(data, null, 2), function (err) {
-      if (err) {
-        return res.send("Write file error")
+    for(key of keys) {
+      if(req.body[key] == "") {
+        return res.send("Please fill all the gaps")
       }
-      return res.redirect(`/admin/recipes/${id}`)
+    }
+
+    Recipe.create(req.body, (recipe) => {
+      return res.redirect(`/recipes/${recipe.id}`)
     })
   },
   
@@ -64,7 +41,7 @@ module.exports = {
       ...foundRecipe
     }
   
-    return res.render("admin/show", {recipe})
+    return res.render("admin/recipes/show", {recipe})
   },
   
   edit(req, res) {
@@ -81,7 +58,7 @@ module.exports = {
       ...foundRecipe
     }
   
-    return res.render("admin/edit", {recipe})
+    return res.render("admin/recipes/edit", {recipe})
   },
   
   put(req, res) {
