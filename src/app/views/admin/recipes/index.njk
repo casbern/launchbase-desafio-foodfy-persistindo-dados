@@ -13,10 +13,10 @@
 
 {% for recipe in recipes %}
 <div class="cards">
-<img class="card-avatar" src={{recipe.recipe_avatar}}>
+<img class="card-avatar" src="{{recipe.image}}">
 <div class="card-info">
-<p class="card-main-title">{{recipe.recipe_name}}</p>
-<p class="card-author">por {{recipe.recipe_author}}</p>
+<p class="card-main-title">{{recipe.title}}</p>
+<p class="card-author">por {{recipe.name}}</p>
 <a href="/admin/recipes/{{recipe.id}}">Visualizar</a>
 </div>
 </div>

@@ -3,7 +3,12 @@ const fs = require("fs")
 
 module.exports = {
   index(req, res) {
-    return res.render("admin/recipes/index", {recipes}) 
+    console.log("index executed")
+    Recipe.all( (recipes) => {
+      console.log("Recipes in controllers:")
+      console.log(recipes)
+      return res.render("admin/recipes/index", {recipes}) 
+    })
   },
 
   create(req, res) {
