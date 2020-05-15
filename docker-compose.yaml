@@ -1,10 +1,9 @@
-# docker-compose.yml
 version: '3'
+
 services:
-  database:
-    image: "postgres" # use latest official postgres version
+
+  db:
+    image: postgres
+    restart: always
     env_file:
       - database.env # configure postgres
-    volumes:
-      - database-data:/var/lib/postgresql/data/ # persist data even if container shuts downvolumes:
-  database-data: # named volumes can be managed easier using docker-compose
