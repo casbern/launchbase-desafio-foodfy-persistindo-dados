@@ -20,6 +20,11 @@ module.exports = {
     console.log(req.body)
     //==
     const keys = Object.keys(req.body)
+    keys.pop() //pop() method returns the deleted item of the array.
+
+    console.log("I am the keys")
+    console.log(keys)
+
     for(key of keys) {
       if(req.body[key] == "") {
         return res.send("Please fill all the gaps")
