@@ -12,14 +12,14 @@
 <a href="/admin/recipes/{{recipe.id}}/edit" class="btn btn-edit">Editar receita</a>
 
 <div>
-<div class="avatar" style="background-image: url({{recipe.recipe_avatar}})">
+<div class="avatar" style="background-image: url({{recipe.image}})">
 </div>
 </div>
 
 
-<div class="main-title">{{recipe.recipe_name}}</div>
+<div class="main-title">{{recipe.title}}</div>
 
-<div class="author">por {{recipe.recipe_author}}</div>
+<div class="author">por {{recipe.name}}</div>
 
 <div class="title">Ingredientes</div>
 <div class="list-ingredients">
@@ -41,7 +41,7 @@
 
 
 <div class="title">Informações adicionais</div>
-<div class="extra-information">{{recipe.extra_information}}</div>
+<div class="extra-information">{{recipe.information}}</div>
 
 {% endblock %}
 

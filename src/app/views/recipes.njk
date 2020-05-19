@@ -13,14 +13,14 @@
 <section class="cards">
 
   {% for item in items.recipes %}
-  <div class="card" id="{{item.recipe_name}}">
+  <div class="card" id="{{item.title}}">
       <div class="card__image-container">
-          <a href="/recipes/{{loop.index0}}"><img src="{{item.recipe_avatar}}" alt="{{item.title}}"></a>
+          <a href="/recipes/{{loop.index0}}"><img src="{{item.image}}" alt="{{item.title}}"></a>
       </div>
 
     <div class="card__recipe">
-      <p class="card__recipe-name">{{item.recipe_name}}</p>
-      <p class="card__author">{{item.recipe_author}}</p>
+      <p class="card__recipe-name">{{item.title}}</p>
+      <p class="card__author">{{item.name}}</p>
     </div>
   </div>
 
