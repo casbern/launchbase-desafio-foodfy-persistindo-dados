@@ -14,8 +14,14 @@ module.exports = {
   },
   
   recipes(req, res) {
-    //return res.render("recipes", { items: data })
-  },
+    Recipe.all( (recipes) => {
+      //console.log("This route with all recipes was called")
+
+      //console.log("Recipes in controllers:")
+      //console.log(recipes)
+      return res.render("recipes", { items: recipes })
+    })
+  }, 
   
   recipe(req, res) {
   

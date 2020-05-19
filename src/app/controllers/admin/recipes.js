@@ -56,8 +56,11 @@ module.exports = {
   },
   
   delete(req, res) {
-    //console.log("req.body.id")
-    //console.log(req.body.id)
+    console.log("req.body.id")
+    console.log(req.body.id)
+
+    console.log("req.params.id")
+    console.log(req.params.id)
 
     Recipe.delete(req.body.id, () => {
       return res.redirect('/admin/recipes')
