@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="/admin/show.css">
 {% endblock %}
 
-<h3>Receita: {{recipe.recipe_name}}</h3>
+<h3>Receita: {{recipe.title}}</h3>
 
 <a href="/admin/recipes/{{recipe.id}}/edit" class="btn btn-edit">Editar receita</a>
 
@@ -15,7 +15,6 @@
 <div class="avatar" style="background-image: url({{recipe.image}})">
 </div>
 </div>
-
 
 <div class="main-title">{{recipe.title}}</div>
 
