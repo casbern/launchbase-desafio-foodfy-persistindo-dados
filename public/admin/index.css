@@ -10,10 +10,7 @@
 
 .card-avatar {
   border-radius: 8px;
-  margin-right: 20px;
-  margin-bottom: 20px;
-  height: 80px;
-  width: 180px;
+  width: 100%;
 }
 
 .card-main-title {
@@ -25,6 +22,10 @@
   font-weight: 400;
   font-size: 14px;
   color: var(--color-dark-grey);
+}
+
+.card-info {
+  margin-left: 20px;
 }
 
 .card-info a {

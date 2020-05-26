@@ -2,18 +2,24 @@
 <html>
 
 <head> 
+  <link rel="stylesheet" href="/common.css">
+  
   {% block head %}
   
     <title>Foodfy</title>
   
   {% endblock %}
-  <link rel="stylesheet" href="/common.css">
 </head>
 
 <body>
     <header class="admin-header">
       <div class="logo admin-logo">
         <a href="/"><img src="/assets/logo-white.png" alt="Logo Foodfy"></a>
+      </div>
+
+      <div class="links">
+        <a id="recipes" href="#">Receitas</a>
+        <a id="chefs" href="#">Chefs</a>
       </div>
     </header>
 

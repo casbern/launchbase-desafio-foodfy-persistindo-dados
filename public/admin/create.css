@@ -83,11 +83,26 @@
   margin-bottom: 30px;
 }
 
-.admin-header {
+header {
   background-color: var(--color-black);
 }
 
-.admin-logo {
+header .logo{
   padding-left: 17%;
+  flex-grow: unset;
 }
+
+header .links {
+  margin-left: 50px;
+}
+
+header .links a {
+  color: var(--color-grey);
+}
+
+.active {
+  font-weight: bold;
+  color: white;
+}
+
 
