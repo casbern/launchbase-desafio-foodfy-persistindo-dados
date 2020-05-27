@@ -3,8 +3,8 @@
 {% block head %}
 <title>Home - Foodfy</title>
 
-<link rel="stylesheet" href="/index.css">
-<link rel="stylesheet" href="/recipes.css">
+<link rel="stylesheet" href="/main/index.css">
+<link rel="stylesheet" href="/main/recipes.css">
 
 {% endblock %}
 
@@ -19,7 +19,7 @@
   </div>
 
   <div class="banner__image-container">
-    <img src="assets/chef.png" alt="Chef">
+    <img src="/main/img/chef.png" alt="Chef">
   </div>
 </div>
 
@@ -47,17 +47,3 @@
 
 {% endblock %}
 
-{% block modal %}
-
-<div class="modal-overlay">
-  <div class="modal">
-    <div class="modal-content">
-      <img src="" alt="">
-      <p class="modal__recipe-name"></p>
-      <p class="modal__author"></p>
-      <p class="modal__close">Fechar modal</p>
-    </div>
-  </div>
-</div>
-
-{% endblock %}

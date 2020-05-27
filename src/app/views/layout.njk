@@ -7,14 +7,14 @@
       <title>Foodfy</title>
   
     {% endblock %}
-  <link rel="stylesheet" href="/common.css">
+  <link rel="stylesheet" href="/common/common.css">
 </head>
 
 <body>
   <div class="wrapper">
     <header>
       <div class="logo">
-        <a href="/"><img src="/assets/logo.png" alt="Logo Foodfy"></a>
+        <a href="/"><img src="/main/img/logo.png" alt="Logo Foodfy"></a>
       </div>
 
       <div class="links">
@@ -26,13 +26,14 @@
 
     {% block content %}{% endblock %}
 
-  </div> <!-- end of the wrapper div -->
+  </div>
 
   <footer>
     <p>Todos direitos reservados, receitas Foodfy.</p>
   </footer>
 
-  <script src="/scripts.js"></script>
+  <script src="/common/links.js"></script>
+  <script src="/main/showHideRecipe.js"></script>
 
 </body>
 
