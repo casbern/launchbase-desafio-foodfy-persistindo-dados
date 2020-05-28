@@ -6,8 +6,6 @@ module.exports = {
      db.query(`
      SELECT * FROM recipes
      ORDER BY name ASC`, (err, results) => {
-       //console.log("Results from DB are:")
-       //console.log(results)
       if(err) throw `Database Error! ${err}`
       callback(results.rows)
      })
@@ -26,8 +24,6 @@ module.exports = {
     ) VALUES ($1, $2, $3, $4, $5, $6, $7)
     RETURNING id
     `
-    //console.log(query)
-
     const values = [
       data.image,
       data.title,
@@ -58,9 +54,6 @@ module.exports = {
   },
 
   update(data, callback) {
-    //console.log("data")
-    //console.log(data)
-
     const query = `
       UPDATE recipes SET
         image=($1),
@@ -80,10 +73,7 @@ module.exports = {
       data.information,
       data.id
     ]   
-
-    //console.log("values")
-    //console.log(values)
-
+    
     db.query(query, values, (err, results) => {
       if(err) throw `Database Error! ${err}`
 

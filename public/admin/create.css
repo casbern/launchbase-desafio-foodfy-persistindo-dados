@@ -97,12 +97,9 @@ header .links {
 }
 
 header .links a {
-  color: var(--color-grey);
-}
-
-.active {
-  font-weight: bold;
   color: white;
 }
+
+
 
 

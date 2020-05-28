@@ -3,8 +3,6 @@ const Recipe = require("../../models/recipe")
 module.exports = {
   index(req, res) {
     Recipe.all( (recipes) => {
-      //console.log("Recipes in controllers:")
-      //console.log(recipes)
       return res.render("admin/recipes/index", {recipes}) 
     })
   },
@@ -14,14 +12,8 @@ module.exports = {
   },
   
   post(req, res) {
-    //console.log("req.body")
-    //console.log(req.body)
-    //==
     const keys = Object.keys(req.body)
-    keys.pop() //pop() method returns the deleted item of the array.
-
-    //console.log("I am the keys")
-    //console.log(keys)
+    keys.pop()
 
     for(key of keys) {
       if(req.body[key] == "") {
@@ -39,7 +31,6 @@ module.exports = {
       if(!recipe) return res.send("Recipe not found")
       return res.render("admin/recipes/show", {recipe})
     })
-  
   },
   
   edit(req, res) {
@@ -56,12 +47,6 @@ module.exports = {
   },
   
   delete(req, res) {
-    console.log("req.body.id")
-    console.log(req.body.id)
-
-    console.log("req.params.id")
-    console.log(req.params.id)
-
     Recipe.delete(req.body.id, () => {
       return res.redirect('/admin/recipes')
     })

@@ -1,4 +1,4 @@
-{% extends "layout.njk" %}
+{% extends "./layout.njk" %}
 
 {% block head %}
 <title>Recipes - Foodfy</title>
@@ -9,9 +9,7 @@
 
 {% block content %}
 
-
 <section class="cards">
-
   {% for recipe in recipes %}
   <div class="card" id="{{recipe.title}}">
       <div class="card__image-container">

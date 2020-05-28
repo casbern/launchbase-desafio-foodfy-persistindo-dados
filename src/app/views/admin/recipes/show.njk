@@ -1,8 +1,9 @@
-{% extends "admin/layout.njk" %}
+{% extends "admin/common/layout.njk" %}
 
 {% block content %}
 
 {% block head %}
+  <title>Recipe - Admin Foodfy</title>
   <link rel="stylesheet" href="/admin/create.css">
   <link rel="stylesheet" href="/admin/show.css">
 {% endblock %}
@@ -37,7 +38,6 @@
 {% endfor %}
 </ul>
 </div>
-
 
 <div class="title">Informações adicionais</div>
 <div class="extra-information">{{recipe.information}}</div>

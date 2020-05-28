@@ -2,7 +2,7 @@
 <html>
 
 <head> 
-  <link rel="stylesheet" href="/common.css">
+  <link rel="stylesheet" href="/common/common.css">
   
   {% block head %}
   
@@ -14,12 +14,12 @@
 <body>
     <header class="admin-header">
       <div class="logo admin-logo">
-        <a href="/"><img src="/assets/logo-white.png" alt="Logo Foodfy"></a>
+        <a href="/"><img src="/admin/img/logo-white.png" alt="Logo Foodfy"></a>
       </div>
 
       <div class="links">
-        <a id="recipes" href="#">Receitas</a>
-        <a id="chefs" href="#">Chefs</a>
+        <a id="recipes" href="/admin/recipes">Receitas</a>
+        <a id="chefs" href="/admin/chefs">Chefs</a>
       </div>
     </header>
 
@@ -29,6 +29,7 @@
 
   </div> 
 
-</body>
+  <script src="/common/links.js"></script>
 
+</body>
 </html>
