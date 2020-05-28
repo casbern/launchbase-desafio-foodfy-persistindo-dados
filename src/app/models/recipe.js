@@ -34,8 +34,6 @@ module.exports = {
       date(Date.now()).iso
     ]
 
-    //console.log(values)
-
     db.query(query, values, (err, results) => {
       if(err) throw `Database Error! ${err}`
       callback(results.rows[0])
