@@ -1,7 +1,41 @@
-a {
-  text-decoration: none;
+/* INDEX */
+.wrapper-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
+.cards {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+}
+
+.card-avatar {
+  border-radius: 8px;
+  width: 100%;
+}
+
+.card-main-title {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.card-author {
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--color-dark-grey);
+}
+
+.card-info {
+  margin-left: 20px;
+}
+
+.card-info a {
+  font-size: 14px;
+  text-decoration: none;
+  color: var(--color-purple);
+}
+
+/* SHOW */
 .avatar {
   height: 280px;
   border-radius: 15px;
@@ -46,5 +80,7 @@ a {
   text-align: justify;
   margin-bottom: 50px;
 }
+
+
 
 
