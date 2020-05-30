@@ -7,6 +7,8 @@
 .cards {
   display: grid;
   grid-template-columns: 200px 1fr;
+  margin-bottom: 5px;
+  line-height: 26px;
 }
 
 .card-avatar {
@@ -43,27 +45,29 @@
   background-position: center;
 }
 
-.admin-wrapper div.main-title {
+.wrapper div.main-title {
   margin-top: 50px;
   margin-bottom: 10px;
   font-size: 36px;
   text-align: center;
+  font-weight: bold;
 }
 
-.admin-wrapper div.author {
+.wrapper div.author {
   font-size: 20px;
   font-weight: 400;
   color: var(--color-dark-grey);
   text-align: center;
 }
 
-.admin-wrapper div.title {
+.wrapper div.title {
   margin-top: 30px;
   margin-bottom: 20px;
   font-size: 24px;
+  font-weight: bold;
 }
 
-.admin-wrapper div.list-ingredients ul, div.list-steps ul {
+.wrapper div.list-ingredients ul, div.list-steps ul {
   font-size: 18px;
   line-height: 28px;
   font-weight: 400;
@@ -72,7 +76,7 @@
   list-style-position: inside;
 }
 
-.admin-wrapper div.extra-information {
+.wrapper div.extra-information {
   font-size: 18px;
   font-weight: 400;
   color: var(--color-darker-grey);

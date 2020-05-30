@@ -17,26 +17,18 @@ header .links a {
 }
 
 /* CREATE */
-.admin-wrapper {
+.wrapper {
   margin-top: 55px;
 }
 
-.admin-wrapper h3 {
+.wrapper h3 {
   font-size: 24px;
   line-height: 34px;
   display: inline-block;
   margin-bottom: 30px;
 }
 
-.admin-wrapper div {
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 26px;
-  color: var(--color-black);
-  margin-bottom: 5px;
-}
-
-.admin-wrapper input, textarea {
+.wrapper input, textarea {
   display: block;
   border: 1px solid var(--color-border);
   background: white;
@@ -49,21 +41,18 @@ header .links a {
   padding-left: 10px;
 }
 
-.admin-wrapper textarea {
+.wrapper textarea {
   padding: 10px;
+  height: 300px;
+  width: 100%;
 }
 
-.admin-wrapper input::placeholder {
+.wrapper input::placeholder {
   font-size: 14px;
 }
 
-.admin-wrapper .item {
+.wrapper .item {
   margin-bottom: 15px;
-}
-
-.admin-wrapper textarea {
-  height: 300px;
-  width: 100%;
 }
 
 a {
