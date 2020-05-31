@@ -14,4 +14,7 @@ services:
 
 
 volumes:
-  database-data: # named volumes can be managed easier using docker-compose
+  database-data: 
+    # named volumes can be managed easier using docker-compose
+    # this volume needs to be set first, in order for the container 
+    # be able to use it.
