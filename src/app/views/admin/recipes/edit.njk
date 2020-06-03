@@ -1,11 +1,11 @@
 {% extends "admin/common/layout.njk" %}
 
-{% block content %}
-
 {% block head %}
   <title>Edit a Recipe</title>
   <link rel="stylesheet" href="/admin/recipes.css">
 {% endblock %}
+
+{% block content %}
 
 <form id="form-delete" method="post" action="/admin/recipes?_method=DELETE">
   <input type="hidden" name="id" value={{ recipe.id }}>

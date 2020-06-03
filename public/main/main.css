@@ -13,12 +13,12 @@
 }
 
 .banner__information h1 {
-  font-size: 32px;
+  font-size: 2rem;
   margin-bottom: 10px;
 }
 
 .banner__information p {
-  font-size: 18px;
+  font-size: 1.13rem;
   opacity: 70%;
   line-height: 28px;
 }
@@ -37,13 +37,13 @@
 .about-text h1 {
   margin-top: 50px;
   margin-bottom: 20px;
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 
 .about-text h2 {
   margin-top: 30px;
   margin-bottom: 20px;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .about-text p {
@@ -58,7 +58,7 @@ h3 {
 
 h4 {
   font-weight: 400;
-  font-size: 12px;
+  font-size: 0.75rem;
   color: var(--color-grey);
   margin-left: 20px;
 }
@@ -85,7 +85,7 @@ ul {
 }
 
 .recipe-header h2 {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 400;
   color: var(--color-dark-grey);
 }
@@ -100,7 +100,7 @@ ul {
 
 /* RECIPES */
 .section-cards-title {
-  font-size: 21px;
+  font-size: 1.25rem;
   margin: 50px 0px 20px;
 }
 
@@ -118,12 +118,12 @@ ul {
 
 .card__recipe {
   margin-top: 20px;
-  font-size: 18px;
+  font-size: 1.13rem;
   color: var(--color-black);
 }
 
 .card__author {
-  font-size: 14px;
+  font-size: 0.88rem;
   margin-top: 5px;
   color: var(--color-dark-grey);
 }
