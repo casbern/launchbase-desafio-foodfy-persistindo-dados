@@ -11,7 +11,7 @@ module.exports = {
     })
  },
 
- create(data, callback) {
+ create(data, callback) { 
   const query = `
   INSERT INTO chefs (
     avatar_url,
