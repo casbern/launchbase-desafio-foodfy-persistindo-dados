@@ -20,22 +20,22 @@
 <button type="submit" class="btn btn-save">Salvar receita</button>
 
 <div class="item">
-<div>Imagem da receita</div>
+<h4>Imagem da receita</h4>
 <input type="url" name="image" placeholder="http://" value="{{recipe.image}}">
 </div>
 
 <div class="item">
-<div>Nome da Receita</div>
+<h4>Nome da Receita</h4>
 <input type="text" name="title" placeholder="Ex: Torta de Maça" value="{{recipe.title}}">
 </div>
 
 <div class="item">
-<div>Autor da Receita</div>
+<h4>Autor da Receita</h4>
 <input type="text" name="name" placeholder="Ex: João Silva" value="{{recipe.name}}">
 </div>
 
 <div class="item" id="ingredients">
-<div>Ingredientes</div>
+<h4>Ingredientes</h4>
 {% for ingredient in recipe.ingredients %}
 <div class="ingredient">
 <input type="text" name="ingredients[]" value="{{ingredient}}">
@@ -45,7 +45,7 @@
 <button type="button" class="add-ingredient">Adicionar novo ingrediente</button>
 
 <div class="item" id="steps">
-<div>Modo de preparo</div>
+<h4>Modo de preparo</h4>
 {% for step in recipe.preparation %}
 <div class="step">
 <input type="text" name="preparation[]" value="{{step}}">
@@ -55,7 +55,7 @@
 <button type="button" class="add-step">Adicionar novo passo</button>
 
 <div class="item">
-<div>Informações adicionais</div>
+<h4>Informações adicionais</h4>
 <textarea name="information">{{recipe.information}}</textarea>
 </div>
 </form>

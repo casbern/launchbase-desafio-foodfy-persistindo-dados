@@ -9,7 +9,6 @@
 <h3>Gerenciar receitas</h3>
 
 <div class="wrapper-cards">
-
 {% for recipe in recipes %}
 <div class="cards">
 <img class="card-avatar" src="{{recipe.image}}">
@@ -19,7 +18,7 @@
 <a href="/admin/recipes/{{recipe.id}}">Visualizar</a>
 </div>
 </div>
-{% endfor %}
+{% endfor %} 
 </div>
 
 {% endblock %}

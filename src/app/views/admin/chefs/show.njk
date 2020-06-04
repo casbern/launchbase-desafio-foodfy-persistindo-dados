@@ -9,19 +9,15 @@
 {% block content %}
 
 <h3>Chef: {{chef.name}}</h3>
-
 <a href="/admin/recipes/{{recipe.id}}/edit" class="btn btn-edit">Editar chef</a>
-
-<div>
 <div class="avatar" style="background-image: url({{chef.avatar_url}})"></div>
-</div>
+<h1>{{chef.name}}</h1>
+<h3 class="recipes-sub"> receitas</h3>
 
-<div class="main-title">{{chef.name}}</div>
-
-<div class="author"> receitas</div>
+<h2>Receitas</h2>
 
 <div class="wrapper-cards">
-{% for chef in chefs %}
+{% for recipe in recipes %}
 <div class="cards">
 <img class="card-avatar" src="{{recipe.image}}">
 <div class="card-info">

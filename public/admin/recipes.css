@@ -16,15 +16,19 @@
   width: 100%;
 }
 
-.card-main-title {
+.wrapper p.card-main-title {
   font-weight: 400;
   font-size: 1.13rem;
+  margin-bottom: 5px;
+  line-height: initial;
 }
 
-.card-author {
+.wrapper p.card-author {
   font-weight: 400;
   font-size: 0.88rem;
+  margin-bottom: 5px;
   color: var(--color-dark-grey);
+  line-height: initial;
 }
 
 .card-info {
@@ -39,7 +43,7 @@
 
 /* SHOW */
 .avatar {
-  height: 280px;
+  height: 280px; 
   border-radius: 15px;
   background-repeat: no-repeat;
   background-position: center;
@@ -53,21 +57,24 @@
   font-weight: bold;
 }
 
-.wrapper h2 {
+.wrapper h3.author {
   font-size: 1.25rem;
   font-weight: 400;
   color: var(--color-dark-grey);
   text-align: center;
-}
+  line-height: initial;
+  margin-bottom: initial;
+  display: block;
+} 
 
-.wrapper div.title {
+.wrapper h2.title {
   margin-top: 30px;
   margin-bottom: 20px;
   font-size: 1.5rem;
   font-weight: bold;
 }
 
-.wrapper div.list-ingredients ul, div.list-steps ul {
+.wrapper .list-ingredients ul, .list-steps ul {
   font-size: 1.13rem;
   line-height: 28px;
   font-weight: 400;
@@ -83,7 +90,7 @@
   line-height: 28px;
   text-align: justify;
   margin-bottom: 50px;
-}
+} 
 
 
 
