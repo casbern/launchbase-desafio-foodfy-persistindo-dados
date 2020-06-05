@@ -3,14 +3,14 @@ header {
   background-color: var(--color-black);
 }
 
-header .logo{
+/* header .logo{
   padding-left: 17%;
   flex-grow: unset;
-}
+} */
 
-header .links {
+/* header .links {
   margin-left: 50px;
-}
+} */
 
 header .links a {
   color: white;
@@ -46,6 +46,7 @@ header .links a {
   padding: 10px;
   height: 300px;
   width: 100%;
+  line-height: 32px;
 }
 
 .wrapper input::placeholder {
@@ -101,3 +102,45 @@ a {
   margin-right: 10px;
 }
 
+/* SHOW - RECIPE CARDS */
+.wrapper-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  margin-bottom: 5px;
+  line-height: 26px;
+}
+
+.card-avatar {
+  border-radius: 8px;
+  width: 100%;
+}
+
+.wrapper p.card-main-title {
+  font-weight: 400;
+  font-size: 1.13rem;
+  margin-bottom: 5px;
+  line-height: initial;
+}
+
+.wrapper p.card-author {
+  font-weight: 400;
+  font-size: 0.88rem;
+  margin-bottom: 5px;
+  color: var(--color-dark-grey);
+  line-height: initial;
+}
+
+.card-info {
+  margin-left: 20px;
+}
+
+.card-info a {
+  font-size: 0.88rem;
+  text-decoration: none;
+  color: var(--color-purple);
+}
