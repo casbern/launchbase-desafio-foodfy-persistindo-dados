@@ -33,12 +33,36 @@ module.exports = {
 },
 
 find(id, callback) {
+ let chef, recipes
   db.query(`
-  SELECT * FROM chefs
-  WHERE id=$1
+  SELECT *
+  from chefs
+  WHERE chefs.id = $1
   `, [id], (err, results) => {
     if(err) throw `Database Error! ${err}`
-    callback(results.rows[0])
+    chef = results.rows[0]
+    console.log(chef)
+    console.log('callback 1 happened')
+
+    db.query(`
+    SELECT *
+    from recipes
+    WHERE recipes.chef_id = $1
+  `, [id], (err, results) => {
+    if(err) throw `Database Error! ${err}`
+     recipes = results.rows
+    console.log('callback 2 happened')
+
+    callback({chef, recipes})
   })
+  })  
+
+  
+
+  console.log('chef')
+  console.log(chef)
+  console.log('recipes')
+  console.log(recipes)
+
 },
 }
