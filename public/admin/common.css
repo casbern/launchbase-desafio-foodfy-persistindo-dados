@@ -3,14 +3,11 @@ header {
   background-color: var(--color-black);
 }
 
-/* header .logo{
-  padding-left: 17%;
-  flex-grow: unset;
-} */
-
-/* header .links {
-  margin-left: 50px;
-} */
+header .wrapper-header {
+  display: flex;
+  width: 940px;
+  margin: 0 auto;
+}
 
 header .links a {
   color: white;
