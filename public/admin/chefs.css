@@ -18,6 +18,7 @@
 
 .wrapper h2 {
   color: var(--color-black);
+  margin-bottom: 30px;
 }
 
 .wrapper h3.recipes-sub {
