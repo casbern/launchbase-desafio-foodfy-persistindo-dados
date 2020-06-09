@@ -2,9 +2,10 @@ const db = require("../../config/db")
 const {date} = require("../lib/utils")
 
 module.exports = {
-  all(callback) {
+ all(callback) {
     db.query(`
-    SELECT * FROM chefs
+    SELECT * 
+    FROM chefs
     ORDER BY name ASC`, (err, results) => {
      if(err) throw `Database Error! ${err}`
      callback(results.rows)
@@ -32,7 +33,7 @@ module.exports = {
   }) 
 },
 
-find(id, callback) {
+ find(id, callback) {
  let chef, recipes
   db.query(`
     SELECT *
@@ -54,4 +55,35 @@ find(id, callback) {
     })
   }) 
  }, 
+
+ update(data, callback) {
+   const query = `
+   UPDATE chefs SET
+    avatar_url=($1),
+    name=($2)
+   WHERE id=$3 
+   `
+   const values = [
+     data.avatar_url,
+     data.name,
+     data.id
+   ]
+
+   db.query(query, values, function(err, results) {
+     if(err) throw `Database Error. ${err}`
+     callback()
+   })
+ },
+
+ delete(id, callback) {
+   db.query(`
+    DELETE 
+    FROM chefs 
+    WHERE id=$1
+   `, [id], function(err, results) {
+     if(err) throw `Database Error. ${err}`
+
+     return callback()
+   })
+ }
 }

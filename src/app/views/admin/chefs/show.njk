@@ -1,7 +1,7 @@
 {% extends "admin/common/layout.njk" %}
 
 {% block head %}
-  <title>Recipe - Admin Foodfy</title>
+  <title>Receita - Admin Foodfy</title>
   <link rel="stylesheet" href="/admin/common.css">
   <link rel="stylesheet" href="/admin/chefs.css">
 {% endblock %}
@@ -9,7 +9,7 @@
 {% block content %}
 
 <h3>Chef: {{chef.name}}</h3>
-<a href="/admin/recipes/{{chef.id}}/edit" class="btn btn-edit">Editar chef</a>
+<a href="/admin/chefs/{{chef.id}}/edit" class="btn btn-edit">Editar chef</a>
 <div class="avatar" style="background-image: url({{chef.avatar_url}})"></div>
 <h1>{{chef.name}}</h1>
 <h3 class="recipes-sub"> {{ recipes.length }} {{ "receita" if recipes.length == 1 else "receitas" }} </h3>
@@ -23,7 +23,7 @@
 <div class="card-info">
 <p class="card-main-title">{{recipe.title}}</p>
 <p class="card-author">por {{chef.name}}</p>
-<a href="/admin/recipes/{{chef.id}}">Visualizar</a>
+<a href="/admin/recipes/{{recipe.id}}">Visualizar</a>
 </div>
 </div>
 {% endfor %}
