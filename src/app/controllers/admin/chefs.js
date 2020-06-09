@@ -53,9 +53,15 @@ module.exports = {
   },
 
   delete(req, res) {
-    Chef.check(req.body.id)
-    Chef.delete(req.body.id, function() {
-      return res.redirect('/admin/chefs')
-    })
+    Chef.check(req.body.id, function(recipes) {
+      console.log(recipes)
+      if(recipes.length > 0) {
+        return res.send("This chef can't be deleted because it owns recipes")
+      } else {
+        Chef.delete(req.body.id, function() {
+          return res.redirect('/admin/chefs')
+        })
+      }
+    }) 
   }
 }
