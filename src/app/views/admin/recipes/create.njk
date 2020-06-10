@@ -24,8 +24,17 @@
 </div>
 
 <div class="item">
-<h4>Autor da Receita</h4>
-<input type="text" name="name" placeholder="Ex: João Silva">
+<h4>Chef</h4>
+<div>
+  <select name="chefs">
+  <option value="" disabled selected>Selecione um chef</option>
+  {% for chef in chefsSelectOptions %}
+  <option value="{{chef.id}}" {% if recipe.chef_id == chef.id %} {% endif %} >
+  {{chef.name}}
+  </option>
+  {% endfor %}
+  </select>
+</div>
 </div>
 
 <div class="item" id="ingredients">

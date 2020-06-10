@@ -25,7 +25,7 @@ header .links a {
   margin-bottom: 30px;
 }
 
-.wrapper input, textarea {
+.wrapper input, textarea, select {
   display: block;
   border: 1px solid var(--color-border);
   background: white;

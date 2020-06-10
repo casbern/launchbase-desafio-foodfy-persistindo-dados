@@ -22,12 +22,10 @@
 <h1 class="section-cards-title">Mais Acessadas</h1>
 
 <section class="cards">
-
   {% for recipe in recipes %}
-
   <div class="card" id="{{recipe.name}}">
       <div class="card__image-container">
-          <a href="/recipes/{{recipe.id}}"><img src="{{recipe.image}}" alt="{{recipe.title}}"></a>
+        <a href="/recipes/{{recipe.id}}"><img src="{{recipe.image}}" alt="{{recipe.title}}"></a>
     </div>
 
     <div class="card__recipe">

@@ -8,7 +8,10 @@ module.exports = {
   },
 
   create(req, res) {
-    return res.render("admin/recipes/create")
+    Recipe.chefsSelectOptions( (options) => {
+      console.log(options)
+      return res.render("admin/recipes/create", {chefsSelectOptions: options})
+    })
   },
   
   post(req, res) {

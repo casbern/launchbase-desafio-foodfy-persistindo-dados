@@ -88,5 +88,18 @@ module.exports = {
 
       return callback()
     })
+  },
+
+  chefsSelectOptions(callback) {
+    db.query(`
+      SELECT name, id
+      FROM chefs
+    `, (err, results) => {
+      if(err) throw `Database error! ${err}`
+      
+      console.log(results.rows)
+      return callback(results.rows)
+    })
   }
-}
+
+} 
