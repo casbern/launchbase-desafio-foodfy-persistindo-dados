@@ -54,7 +54,7 @@ module.exports = {
 
   delete(req, res) {
     Chef.check(req.body.id, function(recipes) {
-      console.log(recipes)
+      console.log(recipes) 
       if(recipes.length > 0) {
         return res.send("This chef can't be deleted because it owns recipes")
       } else {

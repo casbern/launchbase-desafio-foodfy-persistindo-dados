@@ -107,14 +107,17 @@ a {
 
 .cards {
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 172px 1fr;
   margin-bottom: 5px;
   line-height: 26px;
 }
 
 .wrapper .card-avatar {
   border-radius: 8px;
-  width: 100%;
+  width: 172px;
+  height: 80px;
+  object-fit: cover;
+  margin-bottom: 20px;
 }
 
 .wrapper p.card-main-title {

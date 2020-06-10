@@ -79,16 +79,11 @@ module.exports = {
   db.query(`
     SELECT recipes
     FROM recipes
-    WHERE id=$1
+    WHERE chef_id=$1
   `, [id], function(err, results) {
     if(err) throw `Database Error. ${err}`
 
-    console.log('recipes')
-    console.log(recipes)
-    console.log('results.rows')
-    console.log(results.rows)
     return callback(results.rows)
-    
   })
  },
 
