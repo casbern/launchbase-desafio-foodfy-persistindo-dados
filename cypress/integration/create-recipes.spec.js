@@ -4,34 +4,34 @@ describe('Create a new recipe and check if it was saved correctly in the db', ()
 
     // Get an input, type into it and verify that the value has been updated
     cy.get('input[name="image"]')
-      .type('https://images.unsplash.com/photo-1484723091739-30a097e8f929?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=687&q=80')
+      .type('https://bit.ly/3dSRMo4')
 
     cy.get('input[name="title"]')
-      .type('Torrada Doce')
+      .type('Titulo')
 
     cy.get('select[name="chef"]')
       .select('Mariana Roberto')
 
     cy.get('input[name="ingredients[]"]')
-      .type('5 fatias de pão de forma')
+      .type('Ingrediente 1')
 
     cy.contains('Adicionar novo ingrediente')
       .click()
 
     cy.get('#ingredients > :nth-child(3) > input')
-      .type('Açucar e canela para polvilhar')
+      .type('Ingrediente 2')
 
     cy.get('input[name="preparation[]"]')
-      .type('Frite as fatias de pão com manteiga numa frigideira')
+      .type('Passo 1')
 
     cy.contains('Adicionar novo passo')
       .click()
 
     cy.get('#steps > :nth-child(3) > input')
-      .type('Açucar e canela para polvilhar')
+      .type('Passo 2')
 
     cy.get('textarea[name="information"]')
-      .type('Essa é uma receita muito especial para o café de manhã.')
+      .type('Informação')
 
     cy.contains('Salvar receita')
       .click()
@@ -43,13 +43,14 @@ describe('Create a new recipe and check if it was saved correctly in the db', ()
       cy.task('query:db', `SELECT * FROM recipes WHERE id = ${id}`).then( (results) => {
         let receita = results[0]
         console.log(receita)
-        expect(receita.image).to.equal('https://images.unsplash.com/photo-1484723091739-30a097e8f929?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=687&q=80')
-        expect(receita.title).to.equal('Torrada Doce')
+        expect(receita.image).to.equal('https://bit.ly/3dSRMo4')
+        expect(receita.title).to.equal('Titulo')
         expect(receita.chef_id).to.equal(3)
-        expect(receita.ingredients).to.eql(['5 fatias de pão de forma', 'Açucar e canela para polvilhar'])
-        expect(receita.preparation).to.eql(['Frite as fatias de pão com manteiga numa frigideira', 'Açucar e canela para polvilhar'])
-        expect(receita.information).to.equal('Essa é uma receita muito especial para o café de manhã.')
-      })
+        expect(receita.ingredients).to.eql(['Ingrediente 1', 'Ingrediente 2'])
+        expect(receita.preparation).to.eql(['Passo 1', 'Passo 2'])
+        expect(receita.information).to.equal('Informação')
+        cy.task('query:db', `DELETE FROM recipes WHERE id = ${id}`).then( () => { console.log("Recipe was deleted")})
+      })     
     })
   })
 }) 
