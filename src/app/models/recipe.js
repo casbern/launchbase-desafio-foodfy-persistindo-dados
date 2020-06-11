@@ -66,8 +66,9 @@ module.exports = {
         title=($2),
         ingredients=($3),
         preparation=($4),
-        information=($5)
-      WHERE id=$6
+        information=($5),
+        chef_id=($6)
+      WHERE id=$7
       `
     const values = [
       data.image,
@@ -75,6 +76,7 @@ module.exports = {
       data.ingredients,
       data.preparation,
       data.information,
+      data.chef,
       data.id
     ]   
     
