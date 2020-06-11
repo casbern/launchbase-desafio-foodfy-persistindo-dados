@@ -39,7 +39,10 @@ module.exports = {
   edit(req, res) {
     Recipe.find(req.params.id, (recipe) => {
       if(!recipe) return res.send("Recipe not found")
-      return res.render("admin/recipes/edit", {recipe})
+      
+      Recipe.chefsSelectOptions( (chefs) => {
+        return res.render("admin/recipes/edit", {recipe, chefs})
+      })
     })
   },
   
