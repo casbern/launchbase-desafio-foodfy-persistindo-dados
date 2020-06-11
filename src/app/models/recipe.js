@@ -4,9 +4,13 @@ const {date} = require("../lib/utils")
 module.exports = {
   all(callback) {
      db.query(`
-     SELECT * FROM recipes
-     ORDER BY name ASC`, (err, results) => {
+     SELECT recipes.*, chefs.name 
+     FROM recipes
+     INNER JOIN chefs
+     ON recipes.chef_id = chefs.id
+     `, (err, results) => {
       if(err) throw `Database Error! ${err}`
+      console.log(results.rows)
       callback(results.rows)
      })
   },
@@ -16,34 +20,38 @@ module.exports = {
     INSERT INTO recipes (
       image,
       title,
-      name,
-      ingredients,
+      ingredients, 
       preparation,
       information,
+      chef_id,
       created_at
     ) VALUES ($1, $2, $3, $4, $5, $6, $7)
     RETURNING id
     `
-    const values = [
+    const values = [ 
       data.image,
       data.title,
-      data.name,
       data.ingredients,
       data.preparation,
       data.information,
+      data.chef,
       date(Date.now()).iso
     ]
 
     db.query(query, values, (err, results) => {
       if(err) throw `Database Error! ${err}`
-      callback(results.rows[0])
+      console.log(results.rows[0])
+      return callback(results.rows[0])
     }) 
   },
 
   find(id, callback) {
     db.query(`
-    SELECT * FROM recipes
-    WHERE id=$1
+    SELECT recipes.*, chefs.name 
+    FROM recipes
+    INNER JOIN chefs
+    ON recipes.chef_id = chefs.id
+    WHERE recipes.id=$1
     `, [id], (err, results) => {
       if(err) throw `Database Error! ${err}`
 
@@ -56,16 +64,14 @@ module.exports = {
       UPDATE recipes SET
         image=($1),
         title=($2),
-        name=($3),
-        ingredients=($4),
-        preparation=($5),
-        information=($6)
-      WHERE id=$7
+        ingredients=($3),
+        preparation=($4),
+        information=($5)
+      WHERE id=$6
       `
     const values = [
       data.image,
       data.title,
-      data.name,
       data.ingredients,
       data.preparation,
       data.information,
@@ -96,8 +102,7 @@ module.exports = {
       FROM chefs
     `, (err, results) => {
       if(err) throw `Database error! ${err}`
-      
-      console.log(results.rows)
+
       return callback(results.rows)
     })
   }

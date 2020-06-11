@@ -7,14 +7,14 @@ module.exports = {
     })
   },
 
-  create(req, res) {
-    Recipe.chefsSelectOptions( (options) => {
-      console.log(options)
-      return res.render("admin/recipes/create", {chefsSelectOptions: options})
+  create(req, res) { 
+    Recipe.chefsSelectOptions( (chefs) => {
+      return res.render("admin/recipes/create", {chefs})
     })
   },
   
   post(req, res) {
+  
     const keys = Object.keys(req.body)
     keys.pop()
 

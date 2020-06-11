@@ -39,6 +39,10 @@ header .links a {
   margin-bottom: 10px;
 }
 
+.wrapper select {
+  cursor: pointer;
+}
+
 .wrapper textarea {
   padding: 10px;
   height: 300px;
