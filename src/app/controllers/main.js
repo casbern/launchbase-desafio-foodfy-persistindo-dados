@@ -10,6 +10,12 @@ module.exports = {
   about(req, res) {
     return res.render("main/about")
   },
+
+  chefs(req, res) {
+    Recipe.showChefs( ( chefs ) => {
+      return res.render("main/chefs", {chefs})
+    })
+  },
   
   recipes(req, res) {
     Recipe.all( (recipes) => {
@@ -25,3 +31,4 @@ module.exports = {
   }
 }
 
+ 

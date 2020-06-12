@@ -1,33 +1,3 @@
-/*INDEX */
-.wrapper-chefs {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-
-.wrapper .card-chef-avatar {
-  height: 70px;
-  width: 70px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.chefs {
-  display: grid;
-  grid-template-columns: 70px 1fr;
-  margin-bottom: 30px;
-  line-height: 26px;
-}
-
-.wrapper p.card-name {
-  font-size: 1.13rem;
-  color: var(--color-black);
-}
-
-.wrapper .card-info {
-  align-self: center;
-  margin-right: 5px;
-}
-
 /* SHOW */
 .avatar {
   height: 200px;

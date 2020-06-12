@@ -1,12 +1,11 @@
-{% extends "admin/common/layout.njk" %}
+{% extends "./layout.njk" %} 
 
 {% block head %}
-  <title>Chefs - Admin Foodfy</title>
-  <link rel="stylesheet" href="/admin/chefs.css">
+  <title>Chefs - Foodfy</title>
+  <link rel="stylesheet" href="/main/main.css">
 {% endblock %}
 
 {% block content %}
-<h3>Gerenciar chefs</h3>
 
 <div class="wrapper-chefs">
 {% for chef in chefs %}
@@ -14,11 +13,10 @@
   <img class="card-chef-avatar" src="{{chef.avatar_url}}">
   <div class="card-info">
   <p class="card-name">{{chef.name}}</p>
-  <a href="/admin/chefs/{{chef.id}}">Visualizar</a>
-  </div> 
+  <h3 class="total-recipes"> {{chef.total_recipes}} {{ "receita" if chef.total_recipes == 1 else "receitas" }} </h3>
+  </div>
   </div>
 {% endfor %} 
 </div>
 
 {% endblock %}
-

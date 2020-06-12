@@ -130,5 +130,21 @@ ul {
   color: var(--color-dark-grey);
 }
 
+/*CHEFS*/
+.wrapper .chefs {
+  line-height: initial;
+}
+.wrapper h3.total-recipes {
+  color: var(--color-dark-grey);
+  font-size: 0.88rem;
+  font-weight: 400;
+}
 
+.wrapper p.card-name {
+  margin-bottom: 5px;
+}
+
+.wrapper div.card-info {
+  margin-left: 15px;
+}
 

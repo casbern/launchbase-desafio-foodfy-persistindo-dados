@@ -7,10 +7,11 @@ const main = require('./app/controllers/main.js')
 
 module.exports = routes
 
-routes.get('/', main.index) 
-routes.get('/about', main.about)
-routes.get('/recipes', main.recipes)
-routes.get('/recipes/:id', main.recipe)
+routes.get("/", main.index) 
+routes.get("/about", main.about)
+routes.get("/chefs", main.chefs)
+routes.get("/recipes", main.recipes)
+routes.get("/recipes/:id", main.recipe)
 
 // ADMINISTRATIVE AREA
 //RECIPES

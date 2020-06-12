@@ -4,13 +4,12 @@ const {date} = require("../lib/utils")
 module.exports = {
   all(callback) {
      db.query(`
-     SELECT recipes.*, chefs.name 
+     SELECT recipes.*, chefs.name, chefs.avatar_url
      FROM recipes
      INNER JOIN chefs
      ON recipes.chef_id = chefs.id
      `, (err, results) => {
       if(err) throw `Database Error! ${err}`
-      console.log(results.rows)
       callback(results.rows)
      })
   },
@@ -107,6 +106,18 @@ module.exports = {
 
       return callback(results.rows)
     })
-  }
+  },
 
+  showChefs(callback) {
+    db.query(`
+    SELECT chefs.*, count(recipes) as total_recipes
+    FROM recipes
+    LEFT JOIN chefs 
+    ON recipes.chef_id = chefs.id
+    GROUP BY chefs.id
+    `, (err, results) => {
+      if(err) throw `Database Error! ${err}`
+      callback(results.rows)
+    })
+  }
 } 
