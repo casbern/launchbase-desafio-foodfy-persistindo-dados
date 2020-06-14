@@ -28,6 +28,17 @@ module.exports = {
       if(!recipe) return res.status(400).send("Recipe not found")
       return res.render("main/recipe", {recipe})
     })
+  },
+
+  results(req, res) {
+    console.log("Results were called")
+    console.log("req.query") //
+    console.log(req.query) //
+    Recipe.results( req.query, (recipes ) => {
+      console.log(recipes) //
+
+      return res.render("main/results", { recipes })
+    })
   }
 }
 

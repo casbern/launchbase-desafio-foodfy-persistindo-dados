@@ -119,5 +119,18 @@ module.exports = {
       if(err) throw `Database Error! ${err}`
       callback(results.rows)
     })
+  },
+
+  results(filter, callback) {
+    db.query(`
+    SELECT recipes.*
+    FROM recipes
+    WHERE recipes.title ILIKE '%${filter}%' 
+    `, function( err, results ) {
+      console.log('hello') //
+      if(err) throw `Database Error! ${err}`
+      console.log(results.rows) //
+      return callback(results.rows)
+    })
   }
 } 
