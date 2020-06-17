@@ -127,9 +127,7 @@ module.exports = {
     FROM recipes
     WHERE recipes.title ILIKE '%${filter}%' 
     `, function( err, results ) {
-      console.log('hello') //
       if(err) throw `Database Error! ${err}`
-      console.log(results.rows) //
       return callback(results.rows)
     })
   }

@@ -31,11 +31,7 @@ module.exports = {
   },
 
   results(req, res) {
-    console.log("Results were called")
-    console.log("req.query") //
-    console.log(req.query) //
-    Recipe.results( req.query, (recipes ) => {
-      console.log(recipes) //
+    Recipe.results( req.query.filter, (recipes ) => {
 
       return res.render("main/results", { recipes })
     })
