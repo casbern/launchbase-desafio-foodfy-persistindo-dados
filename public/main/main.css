@@ -148,3 +148,8 @@ ul {
   margin-left: 15px;
 }
 
+/*RESULTS*/
+.wrapper h3.results {
+  font-size: 1.5rem;
+  color: var(--color-black);
+}

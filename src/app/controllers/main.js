@@ -32,8 +32,9 @@ module.exports = {
 
   results(req, res) {
     Recipe.results( req.query.filter, (recipes ) => {
-
-      return res.render("main/results", { recipes })
+      const filter = req.query.filter
+      console.log(recipes, filter)
+      return res.render("main/results", { recipes, filter })
     })
   }
 }

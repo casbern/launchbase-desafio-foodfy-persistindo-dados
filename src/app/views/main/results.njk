@@ -1,12 +1,12 @@
 {% extends "./layout.njk" %} 
 
 {% block head %}
-  <title>Busca: {{recipe.title}} </title>
+  <title>Busca: {{filter}} </title>
   <link rel="stylesheet" href="main/main.css">
 {% endblock %}
 
 {% block content %}
-<h3>Buscando por: {{recipe.title}}</h3>
+<h3 class="results">Buscando por "{{filter}}"</h3>
 
 <section class="cards">
   {% for recipe in recipes %}
@@ -17,7 +17,7 @@
 
     <div class="card__recipe">
       <p class="card__recipe-name">{{recipe.title}}</p>
-      <p class="card__author">{{recipe.name}}</p>
+      <p class="card__author">por {{recipe.name}}</p>
     </div>
   </div>
   {% endfor %}

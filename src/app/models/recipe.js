@@ -122,11 +122,15 @@ module.exports = {
   },
 
   results(filter, callback) {
+    const values = [`%${filter}%`]
+    console.log(values)
     db.query(`
-    SELECT recipes.*
-    FROM recipes
-    WHERE recipes.title ILIKE '%${filter}%' 
-    `, function( err, results ) {
+    SELECT r.title, r.image, c.name
+    FROM recipes r
+    LEFT JOIN chefs c
+    ON c.id = r.chef_id
+    WHERE r.title ILIKE $1 
+    `, values, function( err, results ) {
       if(err) throw `Database Error! ${err}`
       return callback(results.rows)
     })
