@@ -123,9 +123,8 @@ module.exports = {
 
   results(filter, callback) {
     const values = [`%${filter}%`]
-    console.log(values)
     db.query(`
-    SELECT r.title, r.image, c.name
+    SELECT r.title, r.image, r.id, c.name
     FROM recipes r
     LEFT JOIN chefs c
     ON c.id = r.chef_id
